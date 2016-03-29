@@ -11,9 +11,13 @@ class XMLSerializer
 public:
 	XMLSerializer(const std::string& rootName);
 
+	void startNode(const std::string& nodeName);
+
+	void endNode();
+
 	// Base case for recursive createNode
 	template<class Name, class T>
-	void createNode(const std::string& nodeName, Name name, T value)
+	void setAttribute(Name name, T value)
 	{
 		if (m_currentElement == nullptr)
 		{
@@ -30,7 +34,7 @@ public:
 	// Creates a new XML element with nodeName 
 	// and creates name="value" attribute pairs from parameter pack.
 	template<class Name, class T, class ...Properties>
-	void createNode(const std::string& nodeName, Name name, T value, Properties... props)
+	void setAttribute(Name name, T value, Properties... props)
 	{
 		if (m_currentElement == nullptr)
 		{

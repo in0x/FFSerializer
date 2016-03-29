@@ -1,5 +1,7 @@
 ﻿  FFSerializer.cpp
   Generating Code...
   Skipping... (no relevant changes detected)
-  XMLSerializer.cpp
+  main.cpp
+  GameObject.cpp
+  Component.cpp
   FFSerializer.vcxproj -> C:\Users\Philipp\Documents\FFSerializer\Debug\FFSerializer.exe

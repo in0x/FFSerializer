@@ -1,19 +1,31 @@
-// FFSerializer.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
-#include "GameObject.h"
-#include "XMLSerializer.h"
-#include <string>
+#include "FFSerializer.h"
 
-int main()
+FFSerializer::FFSerializer(const std::string& rootName) 
 {
-	XMLSerializer xml{"FFMap"};
+	m_document = new tinyxml2::XMLDocument();
 
-	xml.createNode("GameObject", "go1", 1);
-	xml.createNode("GameObject", "go2", 2);
-	xml.writeToFile("test.xml");
+	m_pRoot = m_document->NewElement(rootName.c_str());
 
-    return 0;
+	m_document->InsertFirstChild(m_pRoot);
+
+	m_pCurrent = m_pRoot;
 }
 
+void FFSerializer::visit(const ISerializable* go)
+{
+	auto pElement = m_document->NewElement(go->ClassNameInstance().c_str());
+	m_pCurrent->InsertEndChild(pElement);
+	m_pCurrent = pElement;
+}
+
+void FFSerializer::leave(const ISerializable* go)
+{
+	m_pCurrent = m_pRoot;
+}
+
+
+void FFSerializer::writeToFile(const std::string& filePath)
+{
+	m_document->SaveFile(filePath.c_str());
+}

@@ -1,0 +1,14 @@
+pch
+*.sdf
+*.opensdf
+*.ilk
+*.ipch
+*.user
+*.iobj
+*.ipdb
+*.pdb
+Debug
+Release
+.vs
+tmp
+

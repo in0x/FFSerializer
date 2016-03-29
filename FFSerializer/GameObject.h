@@ -1,9 +1,11 @@
 #pragma once
 #include "stdafx.h"
+#include "ISerializable.h"
+#include "FFSerializer.h"
 
 class Component;
 
-class GameObject
+class GameObject : public ISerializable
 {
 public:
 	META_CLASS(GameObject);
@@ -13,6 +15,13 @@ public:
 	void addComponent(std::shared_ptr<Component> pComp) 
 	{
 		m_components.push_back(pComp);
+	}
+
+	virtual void serialize(FFSerializer& serializer) override;
+
+	const std::string& getID() const
+	{
+		return m_strID;
 	}
 
 private:

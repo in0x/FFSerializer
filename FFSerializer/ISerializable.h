@@ -1,11 +1,13 @@
 #pragma once
 #include "stdafx.h"
 
-class XMLSerializer;
+class FFSerializer;
 
 class ISerializable
 {
 public:
+	META_CLASS(ISerializable);
+
 	virtual ~ISerializable() {};
-	virtual void serialize(const XMLSerializer& xml) = 0;
+	virtual void serialize(FFSerializer& serializer) = 0;
 };
