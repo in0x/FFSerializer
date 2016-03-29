@@ -10,6 +10,7 @@ ipch/
 *.sln
 Debug/
 .vs/
+.vs/*
 tmp
 FFSerializer/*.vcxproj
 FFSerializer/*.filters
