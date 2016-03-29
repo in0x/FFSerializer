@@ -45,7 +45,6 @@ public:
 private:
 	tinyxml2::XMLDocument* m_document;
 	tinyxml2::XMLElement* m_pRoot;
-	tinyxml2::XMLElement* m_pCurrent;
-
+	
 	std::stack<tinyxml2::XMLElement*> m_hierarchy;
 };

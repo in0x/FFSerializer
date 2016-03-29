@@ -9,8 +9,6 @@ FFSerializer::FFSerializer(const std::string& rootName)
 
 	m_document->InsertFirstChild(m_pRoot);
 
-	m_pCurrent = m_pRoot;
-
 	m_hierarchy.push(m_pRoot);
 }
 
