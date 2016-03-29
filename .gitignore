@@ -1,4 +1,4 @@
-pch
+ipch/
 *.sdf
 *.opensdf
 *.ilk
@@ -7,8 +7,9 @@ pch
 *.iobj
 *.ipdb
 *.pdb
-Debug
-Release
-.vs
+*.sln
+Debug/
+.vs/
 tmp
-
+FFSerializer/*.vcxproj
+FFSerializer/*.filters

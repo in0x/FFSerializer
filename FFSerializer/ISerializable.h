@@ -3,6 +3,10 @@
 
 class FFSerializer;
 
+/*\
+|*| Interface for FFSerializer leaves.
+\*/
+
 class ISerializable
 {
 public:
