@@ -5,6 +5,8 @@ class FFSerializer;
 
 /*\
 |*| Interface for FFSerializer leaves.
+|*| Classes only have to implement this
+|*| interface to be serializable.
 \*/
 
 class ISerializable
